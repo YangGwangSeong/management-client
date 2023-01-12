@@ -7,5 +7,3 @@ export interface Context {
 	user: TypeUserState;
 	setUser: Dispatch<SetStateAction<TypeUserState>>;
 }
-
-export interface AuthFields {}
