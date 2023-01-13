@@ -21,6 +21,7 @@ const LoginForm: FC = () => {
 		register,
 		formState: { errors },
 		handleSubmit,
+		reset,
 	} = useForm<AuthFields>({
 		mode: 'onChange',
 	});
@@ -36,12 +37,19 @@ const LoginForm: FC = () => {
 				name: 'Max Dev',
 			});
 		//else if (type === 'register') registerSync(data);
+
+		reset();
+		setIsShow(false);
 	};
 
 	return (
 		<div className={styles.wrapper} ref={ref}>
 			{user ? (
-				<UserAvatar avatarPath={user.avatarPath || ''} />
+				<UserAvatar
+					link="/dashboard"
+					title="admin dashboard"
+					avatarPath={user.avatarPath || ''}
+				/>
 			) : (
 				<button
 					type="button"
