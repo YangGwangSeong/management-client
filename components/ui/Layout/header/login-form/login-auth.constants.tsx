@@ -1,1 +1,1 @@
-export const validEmail = /^[A-Za-z]+$/i;
+export const validEmail = /^[\w.]+@[\w.]+\.[A-Za-z]{2,3}$/i;

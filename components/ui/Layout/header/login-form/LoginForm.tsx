@@ -9,6 +9,8 @@ import UserAvatar from '@/components/ui/UserAvatar/UserAvatar';
 import { useAuth } from '@/hooks/useAuth';
 import { useOutside } from '@/hooks/useOutside';
 import styles from './LoginForm.module.scss';
+import { FADE_IN, menuAnimation } from '@/utils/animation/fade';
+import { motion } from 'framer-motion';
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false);
@@ -49,7 +51,8 @@ const LoginForm: FC = () => {
 					<FaRegUserCircle />
 				</button>
 			)}
-			{isShow && (
+			{/* {isShow && ( */}
+			<motion.div animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						{...register('email', {
@@ -74,7 +77,7 @@ const LoginForm: FC = () => {
 						error={errors.password}
 						type={'password'}
 					/>
-					<div className={'mt-5 mb-1 text-center'}>
+					<div className={styles.loginButton}>
 						<Button onClick={() => setType('login')}>Login</Button>
 					</div>
 					<button
@@ -84,7 +87,8 @@ const LoginForm: FC = () => {
 						Register
 					</button>
 				</form>
-			)}
+			</motion.div>
+			{/* )} */}
 		</div>
 	);
 };
