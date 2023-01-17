@@ -11,6 +11,8 @@ import { useOutside } from '@/hooks/useOutside';
 import styles from './LoginForm.module.scss';
 import { FADE_IN, menuAnimation } from '@/utils/animation/fade';
 import { motion } from 'framer-motion';
+import { useMutation } from 'react-query';
+import { AuthService } from '@/services/auth/auth.service';
 
 const LoginForm: FC = () => {
 	const { ref, setIsShow, isShow } = useOutside(false);
@@ -28,15 +30,33 @@ const LoginForm: FC = () => {
 
 	const { user, setUser } = useAuth();
 
+	const { mutate: loginSync } = useMutation(
+		['login'],
+		(data: AuthFields) => AuthService.login(data.email, data.password),
+		{
+			onSuccess(data) {
+				if (setUser) setUser(data.user);
+				reset();
+				setIsShow(false);
+			},
+		},
+	);
+
+	const { mutate: registerSync } = useMutation(
+		['register'],
+		(data: AuthFields) => AuthService.register(data.email, data.password),
+		{
+			onSuccess(data) {
+				if (setUser) setUser(data.user);
+				reset();
+				setIsShow(false);
+			},
+		},
+	);
+
 	const onSubmit: SubmitHandler<AuthFields> = (data) => {
-		if (type === 'login')
-			setUser({
-				id: 1,
-				email: 'test@test.com',
-				avatarPath: '',
-				name: 'Max Dev',
-			});
-		//else if (type === 'register') registerSync(data);
+		if (type === 'login') loginSync(data);
+		else if (type === 'register') registerSync(data);
 
 		reset();
 		setIsShow(false);

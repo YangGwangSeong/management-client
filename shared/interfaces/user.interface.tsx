@@ -4,3 +4,8 @@ export interface User {
 	email: string;
 	avatarPath: string;
 }
+
+export interface AuthResponse {
+	user: User;
+	accessToken: string;
+}
