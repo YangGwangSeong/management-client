@@ -7,3 +7,7 @@ export interface Review {
 	movie: Movie;
 	description: string;
 }
+
+export interface ReviewDto extends Pick<Review, 'description'> {
+	movieId: number;
+}
