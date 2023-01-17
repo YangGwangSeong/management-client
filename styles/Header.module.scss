@@ -2,6 +2,7 @@
 	@apply flex-center-between p-4 border-b-2 border-solid border-white;
 
 	.logo {
-		@apply text-2xl text-black font-bold;
+		@apply text-xl text-black font-bold;
+		line-height: 0.8;
 	}
 }
