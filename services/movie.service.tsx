@@ -2,7 +2,7 @@ import { Movie, MovieDto } from '@/shared/interfaces/movie.interface';
 import { axiosClassic } from 'api/interceptor';
 
 export const MovieService = {
-	async getMovieById(id: string) {
+	async getMovieById(id: number) {
 		return axiosClassic.get<Movie>(`/movies/${id}`);
 	},
 
@@ -20,11 +20,11 @@ export const MovieService = {
 		return axiosClassic.post<string>('/movies');
 	},
 
-	async updateMovie(id: string, body: MovieDto) {
+	async updateMovie(id: number, body: MovieDto) {
 		return axiosClassic.put<Movie>(`/movies/${id}`, body);
 	},
 
-	async deleteMovie(id: string) {
+	async deleteMovie(id: number) {
 		return axiosClassic.delete(`/movies/${id}`);
 	},
 };
