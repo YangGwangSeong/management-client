@@ -12,7 +12,7 @@ export const axiosClassic = axios.create({
 	headers: getContentType(),
 });
 
-const instance = axios.create({
+export const instance = axios.create({
 	baseURL: API_URL,
 	headers: getContentType(),
 });
