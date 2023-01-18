@@ -12,3 +12,7 @@ npm install axios
 npm i js-cookie
 npm i --save-dev @types/js-cookie
 npm i react-query
+
+## add schedule
+
+npm install react-loading-skeleton

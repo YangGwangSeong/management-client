@@ -5,7 +5,6 @@ import React, { FC } from 'react';
 import styles from './Home.module.scss';
 
 const Home: FC<HomeInfo> = ({ newMoviews }) => {
-	console.log(newMoviews);
 	return (
 		<Layout title="red">
 			<h1 className={styles.heading}>Newest movies</h1>

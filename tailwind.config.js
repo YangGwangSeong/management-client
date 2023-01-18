@@ -10,7 +10,7 @@ module.exports = {
 		fontSize: {
 			xs: '1rem',
 			sm: '1.1rem',
-			tiny: '1.21rem',
+			tiny: '1.19rem',
 			base: '1.27rem',
 			lg: '1.46rem',
 			xl: '1.64rem',
@@ -24,13 +24,13 @@ module.exports = {
 		extend: {
 			color: {
 				primary: '#5F3DF7',
-				black: '#111',
+				black: '#222',
 			},
 			transitionTimingFunction: {
-				DEFAULT: 'ease-in-out',
+				DEFAULT: 'ease',
 			},
 			transitionDuration: {
-				DEFAULT: '350ms',
+				DEFAULT: '250ms',
 			},
 		},
 	},
