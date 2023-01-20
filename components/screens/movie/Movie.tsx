@@ -1,11 +1,12 @@
 import Layout from '@/components/ui/Layout/Layout';
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Movie.module.scss';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import { useRouter } from 'next/router';
 import { MovieService } from '@/services/movie.service';
 import Reviews from './reviews/Reviews';
+import { ViewService } from '@/services/view.service';
 const Movie: FC = () => {
 	const { query } = useRouter();
 	const movieId = Number(query?.id);
@@ -18,9 +19,21 @@ const Movie: FC = () => {
 		['get movie', query?.id],
 		() => MovieService.getMovieById(movieId),
 		{
+			enabled: !!movieId,
 			select: ({ data }) => data,
 		},
 	);
+
+	const { mutate } = useMutation(['update views'], () =>
+		ViewService.updateView(String(movieId)),
+	);
+
+	useEffect(() => {
+		if (movieId) {
+			mutate();
+		}
+	}, [movieId]);
+
 	return (
 		<Layout title={`${movie?.name} - Cinema`}>
 			<div className={styles.wrapper}>

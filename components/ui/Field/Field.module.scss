@@ -2,17 +2,17 @@
 
 .input {
 	@apply relative block mb-5;
-	@include shadow();
 
 	> input {
-		@apply p-2 w-full text-base rounded-md overflow-hidden bg-white;
+		@apply p-2 w-full text-xs rounded-md overflow-hidden bg-white;
+		@include shadow();
 
 		&::placeholder {
-			@apply text-gray-400;
+			@apply text-gray-400 font-light;
 		}
 
 		&:focus-visible {
-			@apply border-red-100;
+			@apply outline-none;
 		}
 	}
 }

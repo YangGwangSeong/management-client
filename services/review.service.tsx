@@ -3,6 +3,6 @@ import { instance } from 'api/interceptor';
 
 export const ReViewService = {
 	async createReview(body: ReviewDto) {
-		return instance.post<Review>(`/views/reviews`);
+		return instance.post<Review>(`/reviews`, body);
 	},
 };

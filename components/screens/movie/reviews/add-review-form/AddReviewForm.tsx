@@ -3,10 +3,9 @@ import { ReViewService } from '@/services/review.service';
 import { ReviewDto } from '@/shared/interfaces/review.interface';
 import React, { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { MdSend } from 'react-icons/md';
 import styles from './AddReviewForm.module.scss';
-import { queryClient } from 'pages/_app';
 
 const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 	const {
@@ -18,13 +17,15 @@ const AddReviewForm: FC<{ movieId: number }> = ({ movieId }) => {
 		mode: 'onChange',
 	});
 
+	const queryClient = useQueryClient();
+
 	const { mutateAsync } = useMutation(
 		['add review'],
 		(data: ReviewDto) => ReViewService.createReview({ ...data, movieId }),
 		{
-			async onSuccess() {
+			onSuccess() {
 				reset();
-				await queryClient.invalidateQueries(['get movie', movieId]);
+				queryClient.invalidateQueries(['get movie', String(movieId)]);
 			},
 		},
 	);
