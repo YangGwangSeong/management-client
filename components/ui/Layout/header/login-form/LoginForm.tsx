@@ -54,7 +54,7 @@ const LoginForm: FC = () => {
 		},
 	);
 
-	const onSubmit: SubmitHandler<AuthFields> = (data) => {
+	const onSubmit: SubmitHandler<AuthFields> = data => {
 		if (type === 'login') loginSync(data);
 		else if (type === 'register') registerSync(data);
 
@@ -80,7 +80,11 @@ const LoginForm: FC = () => {
 				</button>
 			)}
 			{/* {isShow && ( */}
-			<motion.div animate={isShow ? 'open' : 'closed'} variants={menuAnimation}>
+			<motion.div
+				initial={false}
+				animate={isShow ? 'open' : 'closed'}
+				variants={menuAnimation}
+			>
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 					<Field
 						{...register('email', {

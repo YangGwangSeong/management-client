@@ -15,6 +15,10 @@
 			@apply outline-none;
 		}
 	}
+
+	> .icon {
+		@apply absolute top-1.5 left-2 text-stone-800 text-xl;
+	}
 }
 
 .error {
