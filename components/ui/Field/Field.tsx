@@ -7,7 +7,12 @@ const Field = forwardRef<HTMLInputElement, IField>(
 	({ error, type = 'text', style, Icon, ...rest }, ref) => {
 		return (
 			<>
-				<div className={styles.input}>
+				<div
+					className={cn(styles.input, {
+						[styles.withIcon]: !!Icon,
+					})}
+					style={style}
+				>
 					{Icon && (
 						<div className={styles.icon}>
 							<Icon />

@@ -12,12 +12,7 @@ const Search: FC = () => {
 	const { data, handleSearch, searchTerm, isSuccess } = useSearch();
 
 	return (
-		<motion.div
-			initial={false}
-			animate={isSuccess ? 'open' : 'closed'}
-			variants={menuAnimation}
-			className={styles.search_top}
-		>
+		<div className={styles.search_top}>
 			<label>
 				<Field
 					placeholder="Search movie"
@@ -27,7 +22,12 @@ const Search: FC = () => {
 				/>
 			</label>
 			{isSuccess && (
-				<div className={styles.result}>
+				<motion.div
+					initial={false}
+					animate={isSuccess ? 'open' : 'closed'}
+					variants={menuAnimation}
+					className={styles.result}
+				>
 					{data?.length ? (
 						data.map(movie => (
 							<MovieItem movie={movie} key={movie.id}></MovieItem>
@@ -35,9 +35,9 @@ const Search: FC = () => {
 					) : (
 						<div>Movie not found!</div>
 					)}
-				</div>
+				</motion.div>
 			)}
-		</motion.div>
+		</div>
 	);
 };
 
