@@ -1,0 +1,32 @@
+.sidebar {
+	@apply text-center rounded-l-3xl;
+	background-color: #dae0fb;
+	height: 70%;
+	min-height: 560px;
+
+	.logo {
+		@apply text-5xl block mb-7;
+		color: #0054be;
+	}
+
+	.menu {
+		.item {
+			> a {
+				@apply block mb-5 text-xl;
+
+				svg {
+					@apply mx-auto transition-colors;
+					fill: #1c2034;
+				}
+			}
+
+			&:hover svg {
+				fill: #666d91;
+			}
+
+			&.active svg {
+				@apply fill-purple-500;
+			}
+		}
+	}
+}

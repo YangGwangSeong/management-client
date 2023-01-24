@@ -1,11 +1,11 @@
 import React, { FC, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FaRegUserCircle } from 'react-icons/fa';
-import Field from '@/ui/Field/Field';
-import Button from '@/ui/Button/Button';
+import Field from '@/components/ui/field/Field';
+import Button from '@/components/ui/button/Button';
 import { validEmail } from './login-auth.constants';
 import { AuthFields } from './login-form.interface';
-import UserAvatar from '@/components/ui/UserAvatar/UserAvatar';
+import UserAvatar from '@/components/ui/user-avatar/UserAvatar';
 import { useAuth } from '@/hooks/useAuth';
 import { useOutside } from '@/hooks/useOutside';
 import styles from './LoginForm.module.scss';

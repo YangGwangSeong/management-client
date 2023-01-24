@@ -1,5 +1,5 @@
-import Field from '@/components/ui/Field/Field';
-import MovieItem from '@/components/ui/Movie-Item/MovieItem';
+import Field from '@/components/ui/field/Field';
+import MovieItem from '@/components/ui/movie-item/MovieItem';
 import { menuAnimation } from '@/utils/animation/fade';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
