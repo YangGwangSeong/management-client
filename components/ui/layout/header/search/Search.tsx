@@ -6,7 +6,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import styles from './Search.module.scss';
-import { useSearch } from './useSearch';
+import { useSearch } from '@/hooks/useSearch';
 
 const Search: FC = () => {
 	const { data, handleSearch, searchTerm, isSuccess } = useSearch();
