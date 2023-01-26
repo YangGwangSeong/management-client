@@ -13,7 +13,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, ...meta }) => {
 			<Meta {...meta} />
 			<section className={user ? styles.wrapper : ''}>
 				{user && <Sidebar></Sidebar>}
-				<div>
+				<div className={styles.content}>
 					<Header />
 					<main className={styles.main}>{children}</main>
 				</div>

@@ -1,31 +1,41 @@
+@import '../../../../styles/mixins.scss';
+
 .sidebar {
-	@apply text-center rounded-l-3xl;
-	background-color: #dae0fb;
-	height: 70%;
-	min-height: 560px;
+	@apply relative;
+	> div {
+		@include shadow('lg', false);
+		@apply text-center absolute w-full;
+		//background-color: #dae0fb;
+		background-image: linear-gradient(45deg, #dee3f9, #bfc7f0);
+		min-height: 500px;
+		border-top-left-radius: 2rem;
+		border-bottom-left-radius: 2rem;
+		top: 50%;
+		transform: translateY(-50%);
 
-	.logo {
-		@apply text-5xl block mb-7;
-		color: #0054be;
-	}
+		.logo {
+			@apply text-5xl block mb-7;
+			color: #0054be;
+		}
 
-	.menu {
-		.item {
-			> a {
-				@apply block mb-5 text-xl;
+		.menu {
+			.item {
+				> a {
+					@apply block mb-5 text-xl;
 
-				svg {
-					@apply mx-auto transition-colors;
-					fill: #1c2034;
+					svg {
+						@apply mx-auto transition-colors;
+						fill: #1c2034;
+					}
 				}
-			}
 
-			&:hover svg {
-				fill: #666d91;
-			}
+				&:hover svg {
+					fill: #666d91;
+				}
 
-			&.active svg {
-				@apply fill-purple-500;
+				&.active svg {
+					@apply fill-purple-500;
+				}
 			}
 		}
 	}

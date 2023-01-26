@@ -9,25 +9,27 @@ const Sidebar: FC = () => {
 	const { asPath } = useRouter();
 	return (
 		<aside className={styles.sidebar}>
-			<Link href="/" className={styles.logo}>
-				R
-			</Link>
-			<nav className={styles.menu}>
-				<ul>
-					{menu.map(item => (
-						<li
-							key={item.link}
-							className={cn(styles.item, {
-								[styles.active]: item.link === asPath,
-							})}
-						>
-							<Link href={item.link}>
-								<item.Icon />
-							</Link>
-						</li>
-					))}
-				</ul>
-			</nav>
+			<div>
+				<Link href="/" className={styles.logo}>
+					R
+				</Link>
+				<nav className={styles.menu}>
+					<ul>
+						{menu.map(item => (
+							<li
+								key={item.link}
+								className={cn(styles.item, {
+									[styles.active]: item.link === asPath,
+								})}
+							>
+								<Link href={item.link}>
+									<item.Icon />
+								</Link>
+							</li>
+						))}
+					</ul>
+				</nav>
+			</div>
 		</aside>
 	);
 };
