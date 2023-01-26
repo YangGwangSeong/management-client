@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import Logo from '@/ui/Layout/header/Logo';
-import LoginForm from '@/ui/Layout/header/login-form/LoginForm';
+import Logo from '@/components/ui/layout/header/Logo';
+import LoginForm from '@/components/ui/layout/header/login-form/LoginForm';
 import styles from '@/styles/Header.module.scss';
 import Search from './search/Search';
 

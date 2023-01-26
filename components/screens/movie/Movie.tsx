@@ -1,4 +1,4 @@
-import Layout from '@/components/ui/Layout/Layout';
+import Layout from '@/components/ui/layout/Layout';
 import React, { FC, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Movie.module.scss';

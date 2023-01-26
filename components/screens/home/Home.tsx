@@ -1,5 +1,5 @@
-import Layout from '@/components/ui/Layout/Layout';
-import MovieItem from '@/components/ui/Movie-Item/MovieItem';
+import Layout from '@/components/ui/layout/Layout';
+import MovieItem from '@/components/ui/movie-item/MovieItem';
 import { HomeInfo } from '@/screens/home/home.interface';
 import React, { FC } from 'react';
 import styles from './Home.module.scss';

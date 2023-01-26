@@ -1,4 +1,4 @@
-import Field from '@/components/ui/Field/Field';
+import Field from '@/components/ui/field/Field';
 import { ReViewService } from '@/services/review.service';
 import { ReviewDto } from '@/shared/interfaces/review.interface';
 import React, { FC } from 'react';

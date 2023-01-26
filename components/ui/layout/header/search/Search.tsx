@@ -1,12 +1,12 @@
-import Field from '@/components/ui/Field/Field';
-import MovieItem from '@/components/ui/Movie-Item/MovieItem';
+import Field from '@/components/ui/field/Field';
+import MovieItem from '@/components/ui/movie-item/MovieItem';
 import { menuAnimation } from '@/utils/animation/fade';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import React, { FC } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import styles from './Search.module.scss';
-import { useSearch } from './useSearch';
+import { useSearch } from '@/hooks/useSearch';
 
 const Search: FC = () => {
 	const { data, handleSearch, searchTerm, isSuccess } = useSearch();
