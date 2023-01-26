@@ -1,5 +1,5 @@
-import Header from '@/components/ui/layout/header/Header';
-import Sidebar from '@/components/ui/layout/sidebar/Sidebar';
+import Header from '@/components/ui/Layout/header/Header';
+import Sidebar from '@/components/ui/Layout/sidebar/Sidebar';
 import { IMeta } from '@/utils/meta/meta.interface';
 import Meta from '@/utils/meta/Meta';
 import React, { FC, PropsWithChildren } from 'react';

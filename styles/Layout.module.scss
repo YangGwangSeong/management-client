@@ -9,6 +9,7 @@
 		@include shadow('lg', false);
 		@apply rounded-3xl;
 		background-color: #ebeffd;
+		z-index: 0;
 	}
 }
 
