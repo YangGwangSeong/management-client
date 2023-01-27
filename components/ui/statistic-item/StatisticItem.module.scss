@@ -1,5 +1,5 @@
 .item {
-	@apply px-4 py-5 rounded-2xl relative;
+	@apply px-4 py-5 rounded-2xl relative cursor-default transition-all;
 	background-color: #f2f7ff;
 	border-top: 2px solid #fff;
 	border-left: 2px solid #fff;
@@ -13,8 +13,38 @@
 		//box-shadow: 20px 20px 30px 10px rgb(37 12 171 / 30%); //짙은 버전
 	}
 
-	&:hover::before {
-		@apply bottom-0;
+	&.blue::after {
+		background-image: linear-gradient(to top, #4978fa, #3a62d3);
+	}
+
+	&.light-blue::after {
+		background-image: linear-gradient(to top, #65caef, #4ca6c4);
+	}
+
+	&.purple::after {
+		background-image: linear-gradient(to top, #746fd6, #5d58b4);
+	}
+
+	&.green::after {
+		background-image: linear-gradient(to top, #00d098, #00a97b);
+	}
+
+	&::after {
+		content: '';
+		@apply absolute w-5 rounded-tl-xl rounded-bl-xl right-0 transition-all;
+		height: 5.3rem;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 1;
+		box-shadow: inset 5px 4px 7px rgba(0, 0, 0, 0.15);
+	}
+
+	&:hover {
+		margin-top: -10px;
+		box-shadow: 20px 20px 30px 10px rgb(37 12 171 / 30%);
+		&::before {
+			@apply -bottom-0.5;
+		}
 	}
 
 	.icon {

@@ -1,7 +1,9 @@
 import Heading from '@/components/ui/heading/Heading';
 import StatisticItem from '@/components/ui/statistic-item/StatisticItem';
+import { motion } from 'framer-motion';
 import React, { FC } from 'react';
 import { AiOutlineEye } from 'react-icons/ai';
+
 const MainStatistics: FC = () => {
 	return (
 		<div>
@@ -12,27 +14,7 @@ const MainStatistics: FC = () => {
 						Icon: AiOutlineEye,
 						name: 'Views',
 						value: 2000000,
-					}}
-				></StatisticItem>
-				<StatisticItem
-					item={{
-						Icon: AiOutlineEye,
-						name: 'Views',
-						value: 2000000,
-					}}
-				></StatisticItem>
-				<StatisticItem
-					item={{
-						Icon: AiOutlineEye,
-						name: 'Views',
-						value: 2000000,
-					}}
-				></StatisticItem>
-				<StatisticItem
-					item={{
-						Icon: AiOutlineEye,
-						name: 'Views',
-						value: 2000000,
+						color: 'blue',
 					}}
 				></StatisticItem>
 			</div>
