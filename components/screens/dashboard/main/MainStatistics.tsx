@@ -1,4 +1,5 @@
 import Heading from '@/components/ui/heading/Heading';
+import Loader from '@/components/ui/Loader';
 import StatisticItem from '@/components/ui/statistic-item/StatisticItem';
 import { StatisticsService } from '@/services/statistics/statistics.service';
 import { motion } from 'framer-motion';
@@ -15,7 +16,7 @@ const MainStatistics: FC = () => {
 		<div>
 			<Heading>Main Statistics</Heading>
 			{isLoading ? (
-				<div>loading</div>
+				<Loader count={3} />
 			) : data?.length ? (
 				<div className="grid grid-cols-4 gap-8">
 					{data.map(item => (
@@ -23,7 +24,7 @@ const MainStatistics: FC = () => {
 					))}
 				</div>
 			) : (
-				<div>not</div>
+				<div>Statistic Not Found</div>
 			)}
 		</div>
 	);

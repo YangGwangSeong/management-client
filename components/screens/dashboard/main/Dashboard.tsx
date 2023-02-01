@@ -1,7 +1,7 @@
 import Heading from '@/components/ui/heading/Heading';
 import Layout from '@/components/ui/Layout/Layout';
 import React, { FC } from 'react';
-import MainStatistics from '@/screens/dashboard/main/main-statistics/MainStatistics';
+import MainStatistics from '@/components/screens/dashboard/main/MainStatistics';
 
 const Dashboard: FC = () => {
 	return (
