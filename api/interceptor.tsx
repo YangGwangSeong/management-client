@@ -12,7 +12,7 @@ export const axiosClassic = axios.create({
 	headers: getContentType(),
 });
 
-const instance = axios.create({
+export const instance = axios.create({
 	baseURL: API_URL,
 	headers: getContentType(),
 });
@@ -21,8 +21,12 @@ instance.interceptors.request.use((config: AxiosRequestConfig) => {
 	const accessToken = Cookies.get('accessToken');
 
 	if (config.headers && accessToken) {
-		config.headers = { ...config.headers } as AxiosHeaders;
-		config.headers.set('Authorization', accessToken);
+		// config.headers = { ...config.headers } as AxiosHeaders;
+		// config.headers.set('Authorization', `Bearer ${accessToken}`);
+		(config.headers as AxiosHeaders).set(
+			'Authorization',
+			`Bearer ${accessToken}`,
+		);
 	}
 
 	return config;

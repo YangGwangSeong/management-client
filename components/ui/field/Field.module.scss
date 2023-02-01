@@ -1,0 +1,36 @@
+@import '../../../styles/mixins.scss';
+
+.input {
+	@apply relative block mb-5;
+
+	> input {
+		@apply p-2 w-full text-xs rounded-md overflow-hidden bg-white;
+		@include shadow();
+
+		&::placeholder {
+			@apply text-gray-400 font-light;
+		}
+
+		&:focus-visible {
+			@apply outline-none;
+		}
+	}
+
+	&.withIcon {
+		@apply mb-0;
+
+		> input {
+			@apply pl-10;
+		}
+	}
+
+	> .icon {
+		@apply absolute top-2 left-2 text-stone-600 text-lg;
+	}
+}
+
+.error {
+	//@apply absolute -bottom-5 left-0 w-full text-sky-700;
+	@apply text-amber-500;
+	font-size: 0.75rem;
+}

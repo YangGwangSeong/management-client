@@ -1,0 +1,19 @@
+@import '../../../../../styles/mixins.scss';
+
+.search_top {
+	@apply relative;
+	max-width: 600px;
+
+	.result {
+		@apply flex flex-wrap absolute z-10 p-5 mt-3 rounded-lg;
+		width: 600px;
+		background-color: #ebecf4;
+		left: -144px;
+		@include shadow();
+
+		> a {
+			@apply mr-4 last:mr-0;
+			width: 23%;
+		}
+	}
+}

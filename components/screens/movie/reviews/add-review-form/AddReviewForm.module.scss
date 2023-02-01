@@ -1,0 +1,9 @@
+.description {
+	@apply relative;
+}
+.button {
+	@apply text-xl absolute right-2 top-1.5 text-purple-500 opacity-75;
+	&:hover {
+		@apply opacity-100 transition-opacity;
+	}
+}

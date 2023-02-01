@@ -7,7 +7,7 @@ const nextConfig = {
 		APP_URL: process.env.REACT_APP_URL,
 	},
 	images: {
-		domains: ['localhost', 'cloudflare-ipfs.com'],
+		domains: ['localhost', 'cloudflare-ipfs.com', 'img.megabox.co.kr'],
 	},
 	async rewrites() {
 		return [
