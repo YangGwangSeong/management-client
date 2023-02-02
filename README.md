@@ -13,6 +13,7 @@ $ npm install axios
 $ npm i js-cookie
 $ npm i --save-dev @types/js-cookie
 $ npm i react-query
+$ npm install react-intersection-observer
 ```
 
 ## add schedule

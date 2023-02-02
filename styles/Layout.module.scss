@@ -9,10 +9,10 @@
 		@include shadow('lg', false);
 		@apply rounded-3xl;
 		background-color: #ebeffd;
-		z-index: 0;
+		z-index: 1;
 	}
 }
 
 .main {
-	@apply px-6 py-4;
+	@apply px-6 py-4 pb-14;
 }
