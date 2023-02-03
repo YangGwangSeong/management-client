@@ -4,7 +4,7 @@ import TotalFees from '@/components/screens/dashboard/middle-statistics/total-fe
 import { StatisticsService } from '@/services/statistics/statistics.service';
 import React, { FC } from 'react';
 import { useQuery } from 'react-query';
-import ViewsChart from './ViewsChart';
+import ViewsChart from '@/screens/dashboard/middle-statistics/views-chart/ViewsChart';
 import styles from './MiddleStatistics.module.scss';
 
 const MiddleStatistics: FC = () => {

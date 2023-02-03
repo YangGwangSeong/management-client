@@ -14,6 +14,7 @@ $ npm i js-cookie
 $ npm i --save-dev @types/js-cookie
 $ npm i react-query
 $ npm install react-intersection-observer
+$ npm install --save chart.js react-chartjs-2
 ```
 
 ## add schedule
