@@ -11,3 +11,7 @@ export interface Movie {
 }
 
 export interface MovieDto extends Pick<Movie, 'name' | 'fees' | 'poster'> {}
+
+// export interface MovieFields extends Omit<MovieDto, 'id'>{
+
+// }
